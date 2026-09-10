@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.manas.worldsave.integration.SaveServiceS3MockIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.00 s -- in com.manas.worldsave.integration.SaveServiceS3MockIntegrationTest
+-------------------------------------------------------------------------------
+Test set: com.manas.worldsave.lease.LeaseServiceTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.83 s -- in com.manas.worldsave.lease.LeaseServiceTest
+-------------------------------------------------------------------------------
+Test set: com.manas.worldsave.save.SaveServiceTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.25 s -- in com.manas.worldsave.save.SaveServiceTest
+-------------------------------------------------------------------------------
+Test set: com.manas.worldsave.storage.FilesystemObjectStoreTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 s -- in com.manas.worldsave.storage.FilesystemObjectStoreTest
+-------------------------------------------------------------------------------
+Test set: com.manas.worldsave.storage.S3ObjectStoreS3MockTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.18 s -- in com.manas.worldsave.storage.S3ObjectStoreS3MockTest

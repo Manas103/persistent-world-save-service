@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: persistent-world-save-service
+  datasource:
+    # Real production profile points at a real PostgreSQL instance. Tests and the local run
+    # override this to H2 in PostgreSQL-compatibility mode (MODE=PostgreSQL); see
+    # src/test/resources/application.yml. Not exercised by any number in this README.
+    url: jdbc:postgresql://localhost:5432/worldsave
+    username: worldsave
+    password: worldsave
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+worldsave:
+  storage:
+    # filesystem is the default backend so `mvn spring-boot:run` works with zero external
+    # dependencies. Set to "s3" and fill in worldsave.storage.s3.* to point at a real S3-compatible
+    # endpoint (S3Mock in tests, or a real bucket in production).
+    backend: filesystem
+    filesystem:
+      root-dir: ./data/objectstore
+    s3:
+      endpoint: http://localhost:9090
+      region: us-east-1
+      bucket: world-saves
+      access-key: test
+      secret-key: test
+
+server:
+  port: 8080
