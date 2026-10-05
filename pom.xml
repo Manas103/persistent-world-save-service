@@ -50,6 +50,18 @@
             <version>${awssdk.version}</version>
         </dependency>
         <dependency>
+            <!-- RocksDB metadata plane for the time-series extension (timeseries/ package). -->
+            <groupId>org.rocksdb</groupId>
+            <artifactId>rocksdbjni</artifactId>
+            <version>9.7.3</version>
+        </dependency>
+        <dependency>
+            <!-- Zstandard compression of segment blobs in the time-series extension. -->
+            <groupId>com.github.luben</groupId>
+            <artifactId>zstd-jni</artifactId>
+            <version>1.5.6-6</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>

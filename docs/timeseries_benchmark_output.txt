@@ -1,0 +1,23 @@
+Time-series extension benchmark
+Machine: 8 physical / 16 logical cores, AMD Ryzen 7 7800X3D, Windows 11 Home, JDK 21 Temurin
+Backend under test: FilesystemObjectStore (local disk), zstd level 3, RocksDB metadata plane
+
+Attempt 1: pointsPerSegment=2000, series=50, segmentsPerSeries=20
+  total points ingested: 2000000 in 1.751s -> 1,141,971 points/sec
+  full-range streaming read: 32,000,000 bytes in 0.333s -> 0.096 GB/s
+  raw bytes 18,005,800 -> compressed bytes 14,717,513 (1.22x)
+
+Attempt 2: pointsPerSegment=20000, series=50, segmentsPerSeries=20
+  total points ingested: 20000000 in 2.353s -> 8,498,842 points/sec
+  full-range streaming read: 320,000,000 bytes in 0.957s -> 0.334 GB/s
+  raw bytes 180,007,150 -> compressed bytes 146,955,025 (1.22x)
+
+Attempt 3: pointsPerSegment=50000, series=50, segmentsPerSeries=20
+  total points ingested: 50000000 in 4.574s -> 10,930,711 points/sec
+  full-range streaming read: 800,000,000 bytes in 2.444s -> 0.327 GB/s
+  raw bytes 450,007,550 -> compressed bytes 367,377,327 (1.22x)
+
+Best measured ingest: 10,930,711 points/sec (claim: 1.1M+/sec)
+Best measured streaming read: 0.334 GB/s (claim: 1.9 GB/s)
+Compression ratio (delta-of-delta + zstd-3 vs raw encoded): 1.22x (claim: 7.4x)
+Attempts used: 3 of 3
